@@ -286,7 +286,7 @@
   <a name="objects--prototype-builtins"></a>
   - [3.7](#objects--prototype-builtins) 不要直接使用`Object.prototype`上的方法, 例如 `hasOwnProperty`, `propertyIsEnumerable`, 和 `isPrototypeOf`. eslint: [`no-prototype-builtins`](https://eslint.org/docs/rules/no-prototype-builtins)
 
-    > 为什么? 因为这些属性很肯能已经被相关对象属性给覆盖了 - 思考 `{ hasOwnProperty: false }` - 或者, 这个对象可能是一个null对象 (`Object.create(null)`).
+    > 为什么? 因为这些属性很可能已经被相关对象属性给覆盖了 - 思考 `{ hasOwnProperty: false }` - 或者, 这个对象可能是一个null对象 (`Object.create(null)`).
 
     ```javascript
     // bad
