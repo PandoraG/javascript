@@ -18,7 +18,7 @@
   - [CSS & Sass](https://github.com/airbnb/css)
   - [Ruby](https://github.com/airbnb/ruby)
 
-## 目录
+## <a id="table-of-contents">目录</a>
 
   1. [Types](#types)
   1. [References](#references)
@@ -63,8 +63,7 @@
 ## Types
 
   <a name="types--primitives"></a><a name="1.1"></a>
-  - [1.1](#types--primitives) **Primitives**: When you access a primitive type you work directly on its value.
-
+  - [1.1](#types--primitives) **基本类型**: 当您访问基本类型时，您可以直接使用其值。
     - `string`
     - `number`
     - `boolean`
@@ -84,7 +83,7 @@
     - Symbols cannot be faithfully polyfilled, so they should not be used when targeting browsers/environments that don’t support them natively.
 
   <a name="types--complex"></a><a name="1.2"></a>
-  - [1.2](#types--complex)  **Complex**: When you access a complex type you work on a reference to its value.
+  - [1.2](#types--complex)  **引用类型（复杂类型）**: 当你使用复杂类型时，实际上你处理的是值的引用；
 
     - `object`
     - `array`
@@ -104,9 +103,9 @@
 ## References
 
   <a name="references--prefer-const"></a><a name="2.1"></a>
-  - [2.1](#references--prefer-const) Use `const` for all of your references; avoid using `var`. eslint: [`prefer-const`](https://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign.html)
+  - [2.1](#references--prefer-const) 使用 `const` 定义所有的 references; 避免使用 `var`. eslint: [`prefer-const`](https://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign.html)
 
-    > Why? This ensures that you can’t reassign your references, which can lead to bugs and difficult to comprehend code.
+    > 为什么? 这可以确保你无法重新分配引用, 这样可以避免一些 bug 和编写难以理解代码.
 
     ```javascript
     // bad
@@ -119,9 +118,9 @@
     ```
 
   <a name="references--disallow-var"></a><a name="2.2"></a>
-  - [2.2](#references--disallow-var) If you must reassign references, use `let` instead of `var`. eslint: [`no-var`](https://eslint.org/docs/rules/no-var.html)
+  - [2.2](#references--disallow-var) 如果是必须重新分配引用, 建议使用`let` 代替 `var`. eslint: [`no-var`](https://eslint.org/docs/rules/no-var.html)
 
-    > Why? `let` is block-scoped rather than function-scoped like `var`.
+    > 为什么? 这是因为，`let` 是块级作用域的，而不像`var`是函数级作用域的.
 
     ```javascript
     // bad
@@ -138,10 +137,10 @@
     ```
 
   <a name="references--block-scope"></a><a name="2.3"></a>
-  - [2.3](#references--block-scope) Note that both `let` and `const` are block-scoped.
+  - [2.3](#references--block-scope) 请注意：`let` 和 `const` 都是块级作用域的.
 
     ```javascript
-    // const and let only exist in the blocks they are defined in.
+    // const 和 let 只存在于他们定义的块中.
     {
       let a = 1;
       const b = 1;
