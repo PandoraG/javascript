@@ -154,7 +154,7 @@
 ## Objects
 
   <a name="objects--no-new"></a><a name="3.1"></a>
-  - [3.1](#objects--no-new) Use the literal syntax for object creation. eslint: [`no-new-object`](https://eslint.org/docs/rules/no-new-object.html)
+  - [3.1](#objects--no-new) 使用字面量语法创建对象. eslint: [`no-new-object`](https://eslint.org/docs/rules/no-new-object.html)
 
     ```javascript
     // bad
@@ -165,9 +165,9 @@
     ```
 
   <a name="es6-computed-properties"></a><a name="3.4"></a>
-  - [3.2](#es6-computed-properties) Use computed property names when creating objects with dynamic property names.
+  - [3.2](#es6-computed-properties) 当创建对象的动态属性时，建议使用计算属性命名.
 
-    > Why? They allow you to define all the properties of an object in one place.
+    > 为什么? 这样我们就可以在一个地方定义一个对象的所有属性了。
 
     ```javascript
 
@@ -191,7 +191,7 @@
     ```
 
   <a name="es6-object-shorthand"></a><a name="3.5"></a>
-  - [3.3](#es6-object-shorthand) Use object method shorthand. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
+  - [3.3](#es6-object-shorthand) 对象方法简写. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
 
     ```javascript
     // bad
@@ -214,7 +214,7 @@
     ```
 
   <a name="es6-object-concise"></a><a name="3.6"></a>
-  - [3.4](#es6-object-concise) Use property value shorthand. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
+  - [3.4](#es6-object-concise) 属性值简写. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
 
     > Why? It is shorter and descriptive.
 
@@ -233,7 +233,7 @@
     ```
 
   <a name="objects--grouped-shorthand"></a><a name="3.7"></a>
-  - [3.5](#objects--grouped-shorthand) Group your shorthand properties at the beginning of your object declaration.
+  - [3.5](#objects--grouped-shorthand) 把所有简写的属性都放在对象声明的开头。
 
     > Why? It’s easier to tell which properties are using the shorthand.
 
@@ -263,9 +263,9 @@
     ```
 
   <a name="objects--quoted-props"></a><a name="3.8"></a>
-  - [3.6](#objects--quoted-props) Only quote properties that are invalid identifiers. eslint: [`quote-props`](https://eslint.org/docs/rules/quote-props.html)
+  - [3.6](#objects--quoted-props) 定义对象属性名时，只当属性名是无效标识时才加引号。 eslint: [`quote-props`](https://eslint.org/docs/rules/quote-props.html)
 
-    > Why? In general we consider it subjectively easier to read. It improves syntax highlighting, and is also more easily optimized by many JS engines.
+    > 为什么? 一般来说， 我们主观上会认为这样写代码更易于都。 它改进了语法高亮, 同时更容易被很多 `JS` 引擎优化 。
 
     ```javascript
     // bad
@@ -284,9 +284,9 @@
     ```
 
   <a name="objects--prototype-builtins"></a>
-  - [3.7](#objects--prototype-builtins) Do not call `Object.prototype` methods directly, such as `hasOwnProperty`, `propertyIsEnumerable`, and `isPrototypeOf`. eslint: [`no-prototype-builtins`](https://eslint.org/docs/rules/no-prototype-builtins)
+  - [3.7](#objects--prototype-builtins) 不要直接使用`Object.prototype`上的方法, 例如 `hasOwnProperty`, `propertyIsEnumerable`, 和 `isPrototypeOf`. eslint: [`no-prototype-builtins`](https://eslint.org/docs/rules/no-prototype-builtins)
 
-    > Why? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
+    > 为什么? 因为这些属性很肯能已经被相关对象属性给覆盖了 - 思考 `{ hasOwnProperty: false }` - 或者, 这个对象可能是一个null对象 (`Object.create(null)`).
 
     ```javascript
     // bad
@@ -304,7 +304,7 @@
     ```
 
   <a name="objects--rest-spread"></a>
-  - [3.8](#objects--rest-spread) Prefer the object spread operator over [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) to shallow-copy objects. Use the object rest operator to get a new object with certain properties omitted.
+  - [3.8](#objects--rest-spread) 首选对象扩展运算符 [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) 浅复制对象. 使用object rest运算符可以获取省略了某些属性的新对象。
 
     ```javascript
     // very bad
