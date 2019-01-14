@@ -1,6 +1,5 @@
 # Airbnb JavaScript 风格指南
 
-*A mostly reasonable approach to JavaScript*
 
 > **Note**: 本指南假设你正在使用[Babel](https://babeljs.io), 并要求你使用 [babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb) or the equivalent. 同时也假设你已经在你的应用中安装了shims/polyfills, with [airbnb-browser-shims](https://npmjs.com/airbnb-browser-shims) or the equivalent.
 
@@ -328,7 +327,7 @@
 ## Arrays
 
   <a name="arrays--literals"></a><a name="4.1"></a>
-  - [4.1](#arrays--literals) Use the literal syntax for array creation. eslint: [`no-array-constructor`](https://eslint.org/docs/rules/no-array-constructor.html)
+  - [4.1](#arrays--literals) 使用字面量语法创建数组. eslint: [`no-array-constructor`](https://eslint.org/docs/rules/no-array-constructor.html)
 
     ```javascript
     // bad
@@ -352,7 +351,7 @@
     ```
 
   <a name="es6-array-spreads"></a><a name="4.3"></a>
-  - [4.3](#es6-array-spreads) Use array spreads `...` to copy arrays.
+  - [4.3](#es6-array-spreads) 使用数组扩展符 `...` 复制数组。
 
     ```javascript
     // bad
@@ -370,7 +369,7 @@
 
   <a name="arrays--from"></a>
   <a name="arrays--from-iterable"></a><a name="4.4"></a>
-  - [4.4](#arrays--from-iterable) To convert an iterable object to an array, use spreads `...` instead of [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
+  - [4.4](#arrays--from-iterable) 要将一个可迭代对象转换成数组, 请使用扩展符 `...` ，而不是 [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
 
     ```javascript
     const foo = document.querySelectorAll('.foo');
@@ -383,7 +382,7 @@
     ```
 
   <a name="arrays--from-array-like"></a>
-  - [4.5](#arrays--from-array-like) Use [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) for converting an array-like object to an array.
+  - [4.5](#arrays--from-array-like) 使用 [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) 将一个类数组对象转换成数组。
 
     ```javascript
     const arrLike = { 0: 'foo', 1: 'bar', 2: 'baz', length: 3 };
@@ -396,7 +395,7 @@
     ```
 
   <a name="arrays--mapping"></a>
-  - [4.6](#arrays--mapping) Use [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) instead of spread `...` for mapping over iterables, because it avoids creating an intermediate array.
+  - [4.6](#arrays--mapping) 使用 [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) 而不是扩展符 `...` 去映射遍历迭代, 因为它避免了创建中间数组。
 
     ```javascript
     // bad
@@ -454,7 +453,7 @@
     ```
 
   <a name="arrays--bracket-newline"></a>
-  - [4.8](#arrays--bracket-newline) Use line breaks after open and before close array brackets if an array has multiple lines
+  - [4.8](#arrays--bracket-newline) 如果数组有多行，则在打开后和关闭数组括号之前使用换行符。
 
     ```javascript
     // bad
@@ -495,10 +494,9 @@
 ## Destructuring
 
   <a name="destructuring--object"></a><a name="5.1"></a>
-  - [5.1](#destructuring--object) Use object destructuring when accessing and using multiple properties of an object. eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
+  - [5.1](#destructuring--object) 访问和使用对象的多个属性时使用对象解构。 eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
 
-    > Why? Destructuring saves you from creating temporary references for those properties.
-
+    > 为什么? 解构使你无需为这些属性创建临时引用。
     ```javascript
     // bad
     function getFullName(user) {
@@ -521,7 +519,7 @@
     ```
 
   <a name="destructuring--array"></a><a name="5.2"></a>
-  - [5.2](#destructuring--array) Use array destructuring. eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
+  - [5.2](#destructuring--array) 使用数组解构。 eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
 
     ```javascript
     const arr = [1, 2, 3, 4];
@@ -535,27 +533,27 @@
     ```
 
   <a name="destructuring--object-over-array"></a><a name="5.3"></a>
-  - [5.3](#destructuring--object-over-array) Use object destructuring for multiple return values, not array destructuring.
+  - [5.3](#destructuring--object-over-array) 对多个返回值使用对象解构，而不是数组解构。
 
-    > Why? You can add new properties over time or change the order of things without breaking call sites.
+    > 为什么? 你可以随时添加新的属性或者改变事物的顺序，而不用破会调用站点。
 
     ```javascript
     // bad
     function processInput(input) {
-      // then a miracle occurs
+      // 然后奇迹出现了
       return [left, right, top, bottom];
     }
 
-    // the caller needs to think about the order of return data
+    // 调用者需要考虑返回数据的顺序
     const [left, __, top] = processInput(input);
 
     // good
     function processInput(input) {
-      // then a miracle occurs
+      // 然后奇迹出现了
       return { left, right, top, bottom };
     }
 
-    // the caller selects only the data they need
+    // 调用者只选择他们需要的数据
     const { left, top } = processInput(input);
     ```
 
